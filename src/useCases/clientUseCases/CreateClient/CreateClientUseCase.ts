@@ -3,16 +3,9 @@ import { ICreateClientRequestDTO } from "./CreateClientDTO";
 import { Client } from '../../../entities/Client';
 
 export class CreateClientUseCase {
-    constructor(private clientsRepository : IClientsRepository) {
-        
+    constructor(private clientsRepository: IClientsRepository) {
     }
-    async execute(data : ICreateClientRequestDTO) {
-        // const clientAlreadyExists = await this.clientsRepository.findByCpfOrEmail(data.cpf);
-
-        // if (clientAlreadyExists) {
-        //     throw new Error('Cliente já cadastrado');
-        // }
-
+    async execute(data: ICreateClientRequestDTO) {
         const client = new Client(data);
         await this.clientsRepository.save(client);
     }
