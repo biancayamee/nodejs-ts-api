@@ -4,9 +4,9 @@ export class Product {
     public readonly id: string;
 
     public name: string;
-    public cpf: string;
-    public email: string;
-    public gender: string;
+    public manufacturing: string;
+    public size: string;
+    public price: string;
 
     constructor(props: Omit<Product, 'id'>, id?: string) {
         Object.assign(this, props);

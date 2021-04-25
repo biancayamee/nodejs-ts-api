@@ -1,6 +1,6 @@
 export interface IUpdateProductByIdRequestDTO {
     name: string;
-    cpf: string;
-    email: string;
-    gender: string;
+    manufacturing: string;
+    size: string;
+    price: string;
 }
