@@ -26,7 +26,5 @@ export class PostgresClientsRepository implements IClientsRepository {
   async deleteById(clientId: string) {
     let clientIndex: number = PostgresClientsRepository.Clients.findIndex((client) => client.id === clientId);
     PostgresClientsRepository.Clients.splice(clientIndex, 1);
-
-
   }
 }
