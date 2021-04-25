@@ -4,9 +4,17 @@ import { Client } from "../entities/Client";
 import { IClientsRepository } from "./IClientsRepository";
 
 export class PostgresClientsRepository implements IClientsRepository {
-  private Clients: Client[] = [];
+  private static Clients: Client[] = [];
 
   async save(Client: Client): Promise<void> {
-    this.Clients.push(Client);
+    PostgresClientsRepository.Clients.push(Client);
+  }
+
+  async get(): Promise<Client[]> {
+    return PostgresClientsRepository.Clients;
+  }
+  async getById(id: string): Promise<Client> {
+    let clientById: Client = PostgresClientsRepository.Clients.find((client) => client.id === id);
+    return clientById;
   }
 }

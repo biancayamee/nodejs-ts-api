@@ -1,6 +1,6 @@
-import { IClientsRepository } from "../../repositories/IClientsRepository";
+import { IClientsRepository } from "../../../repositories/IClientsRepository";
 import { ICreateClientRequestDTO } from "./CreateClientDTO";
-import { Client } from '../../entities/Client';
+import { Client } from '../../../entities/Client';
 
 export class CreateClientUseCase {
     constructor(private clientsRepository : IClientsRepository) {
