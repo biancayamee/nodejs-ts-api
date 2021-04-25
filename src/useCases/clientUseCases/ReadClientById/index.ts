@@ -1,5 +1,5 @@
 
-import { PostgresClientsRepository } from "../../../repositories/PostgresClientRepository";
+import { PostgresClientsRepository } from "../../../repositories/implementations/PostgresClientsRepository";
 import { ReadClientByIdController } from "./ReadClientByIdController";
 import { ReadClientByIdUseCase } from "./ReadClientByIdUseCase";
 

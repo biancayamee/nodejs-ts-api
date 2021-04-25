@@ -1,4 +1,4 @@
-import { PostgresClientsRepository } from "../../../repositories/PostgresClientRepository";
+import { PostgresClientsRepository } from "../../../repositories/implementations/PostgresClientsRepository";
 
 export class ReadClientUseCase {
     constructor(private postgresClientsRepository: PostgresClientsRepository) {

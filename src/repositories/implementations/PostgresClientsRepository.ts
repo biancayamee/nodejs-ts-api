@@ -1,7 +1,7 @@
 
 
-import { Client } from "../entities/Client";
-import { IClientsRepository } from "./IClientsRepository";
+import { Client } from "../../entities/Client";
+import { IClientsRepository } from "../IClientsRepository";
 
 export class PostgresClientsRepository implements IClientsRepository {
   private static Clients: Client[] = [];
