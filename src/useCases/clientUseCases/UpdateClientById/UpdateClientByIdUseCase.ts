@@ -7,7 +7,7 @@ export class UpdateClientByIdUseCase {
 
     }
     async execute(id: string, data: IUpdateClientByIdRequestDTO) {
-        let newClientValue = new Client(data);
+        let newClientValue = new Client(data, id);
         return await this.postgresClientsRepository.updateById(id, newClientValue);
     }
 }

@@ -7,7 +7,7 @@ export class UpdateProductByIdUseCase {
 
     }
     async execute(id: string, data: IUpdateProductByIdRequestDTO) {
-        let newProductValue = new Product(data);
+        let newProductValue = new Product(data, id);
         return await this.postgresProductsRepository.updateById(id, newProductValue);
     }
 }
