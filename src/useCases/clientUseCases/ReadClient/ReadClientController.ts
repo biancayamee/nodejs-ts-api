@@ -9,7 +9,7 @@ export class ReadClientController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       let clientsList = await this.readClientUseCase.execute();
-      return response.status(201).send(clientsList);
+      return response.status(200).send(clientsList);
     } catch (err) {
       return response.status(400).json({
         message: err.message || 'Unexpected error.'

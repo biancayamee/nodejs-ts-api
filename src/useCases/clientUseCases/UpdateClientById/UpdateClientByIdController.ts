@@ -13,7 +13,7 @@ export class UpdateClientByIdController {
       const { name, cpf, email, gender } = request.body;
       const id = request.params['id'];
       updateClientByIdUseCase.execute(id, { name, cpf, email, gender });
-      return response.status(201).send('Cliente atualizado com sucesso.');
+      return response.status(200).send({message: 'Cliente atualizado com sucesso.'});
     } catch (err) {
       return response.status(400).json({
         message: err.message || 'Unexpected error.'

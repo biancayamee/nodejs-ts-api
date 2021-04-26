@@ -9,7 +9,7 @@ export class ReadClientByIdController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       let client = await this.readClientByIdUseCase.execute(request.params['id']);
-      return response.status(201).send(client);
+      return response.status(200).send(client);
     } catch (err) {
       return response.status(400).json({
         message: err.message || 'Unexpected error.'

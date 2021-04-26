@@ -17,7 +17,7 @@ export class CreateProductController {
         gender
       })
 
-      return response.status(201).send('Produto criado com sucesso');
+      return response.status(200).send({message: 'Produto criado com sucesso'});
     } catch (err) {
       return response.status(400).json({
         message: err.message || 'Unexpected error.'

@@ -9,7 +9,7 @@ export class DeleteClientByIdController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       await this.deleteClientByIdUseCase.execute(request.params['id']);
-      return response.status(201).send('Usuário deletado com sucesso.');
+      return response.status(200).send({message: 'Usuário deletado com sucesso.'});
     } catch (err) {
       return response.status(400).json({
         message: err.message || 'Unexpected error.'
