@@ -7,14 +7,14 @@ export class CreateProductController {
   ) { }
 
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, cpf, email, gender } = request.body;
+    const { name, manufacturing, size, price } = request.body;
 
     try {
       await this.createProductUseCase.execute({
         name,
-        cpf,
-        email,
-        gender
+        manufacturing,
+        size,
+        price
       })
 
       return response.status(200).send({message: 'Produto criado com sucesso'});

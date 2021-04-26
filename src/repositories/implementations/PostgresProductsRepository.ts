@@ -6,25 +6,25 @@ import { IProductsRepository } from "../IProductsRepository";
 export class PostgresProductsRepository implements IProductsRepository {
   private static Products: Product[] = [];
 
-  async save(client: Product): Promise<void> {
-    PostgresProductsRepository.Products.push(client);
+  async save(product: Product): Promise<void> {
+    PostgresProductsRepository.Products.push(product);
   }
 
   async get(): Promise<Product[]> {
     return PostgresProductsRepository.Products;
   }
-  async getById(clientId: string): Promise<Product> {
-    let clientById: Product = PostgresProductsRepository.Products.find((client) => client.id === clientId);
-    return clientById;
+  async getById(productId: string): Promise<Product> {
+    let productById: Product = PostgresProductsRepository.Products.find((product) => product.id === productId);
+    return productById;
   }
 
-  async updateById(clientId: string, newProductValue: Product): Promise<void> {
-    let clientIndex: number = PostgresProductsRepository.Products.findIndex((client) => client.id === clientId);
-    Object.assign(PostgresProductsRepository.Products[clientIndex], newProductValue)
+  async updateById(productId: string, newProductValue: Product): Promise<void> {
+    let productIndex: number = PostgresProductsRepository.Products.findIndex((product) => product.id === productId);
+    Object.assign(PostgresProductsRepository.Products[productIndex], newProductValue)
   }
 
-  async deleteById(clientId: string) {
-    let clientIndex: number = PostgresProductsRepository.Products.findIndex((client) => client.id === clientId);
-    PostgresProductsRepository.Products.splice(clientIndex, 1);
+  async deleteById(productId: string) {
+    let productIndex: number = PostgresProductsRepository.Products.findIndex((product) => product.id === productId);
+    PostgresProductsRepository.Products.splice(productIndex, 1);
   }
 }
